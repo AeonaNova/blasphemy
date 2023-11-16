@@ -1,0 +1,23 @@
+{% extends 'main/base.html' %}
+
+{% block title %}
+Создать новость
+{% endblock %}
+
+{% block content %}
+    <h1>Создать статью</h1>
+    {% if perms.catalog.can_create %}
+    <form method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        {{ form.title }}<br>
+        {{ form.posts }}<br>
+        {{ form.photo }}<br>
+        <br>{{ form.cat }}<br>
+        <br>{{ form.slug }}<br>
+        <br><button type="submit" class = "btn btn-primary">Добавить</button>
+        <span>{{error}}</span>
+    {% endif %}
+    </form>
+
+{% endblock %}
+

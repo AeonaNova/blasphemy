@@ -1,0 +1,130 @@
+{% extends 'main/base.html' %}
+
+{% block title %}
+Авторизация
+{% endblock %}
+
+{% block content %}
+<!--    <h1>Войти</h1>-->
+<!--    <p>Зарегистрироваться</p>-->
+
+<!--<h1>Регистрация</h1>-->
+
+<!--<form method="post">-->
+<!--    {% csrf_token %}-->
+<!--    <li class >-->
+<!--        <input type="hidden" name="next" value="{{ next }}" />-->
+<!--            {{ form.as_p }}-->
+<!--        <p ><button type="submit">Регистрация</button></p>-->
+<!--    </li>-->
+<!--</form>-->
+
+
+
+<section class="pb-4">
+  <div class="bg-white border rounded-5">
+
+    <section class="w-100 px-4 py-5 gradient-custom" style="border-radius: .5rem .5rem 0 0;">
+      <style>
+        .gradient-custom {
+          /* fallback for old browsers */
+          background: #f093fb;
+
+          /* Chrome 10-25, Safari 5.1-6 */
+          background: -webkit-linear-gradient(to bottom right, rgba(100, 100, 100, 1), rgba(100, 100, 100, 1));
+
+          /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+          background: linear-gradient(to bottom right, rgba(50, 100, 200, 1), rgba(80, 87, 108, 1))
+        }
+
+        .card-registration .select-input.form-control[readonly]:not([disabled]) {
+          font-size: 1rem;
+          line-height: 2.15;
+          padding-left: .75em;
+          padding-right: .75em;
+        }
+
+        .card-registration .select-arrow {
+          top: 13px;
+        }
+      </style>
+
+      <div class="row justify-content-center">
+        <div class="col-12 col-lg-9 col-xl-9">
+          <div class="card shadow-2-strong card-registration" style="border-radius: 15px;">
+            <div class="card-body p-4 p-md-5">
+              <h3 class="mb-4 pb-2 pb-md-0 mb-md-5">Войдите чтобы войти</h3>
+              <form method="post">
+                {% csrf_token %}
+                {{ form.as_p }}
+                <p ><button class="btn btn-primary btn-lg" type="submit">Войти</button></p>
+              </form>
+<!--              <form method="post">-->
+<!--                {% csrf_token %}-->
+<!--                <input type="hidden" name="next" value="{{ next }}" class="form-control form-control-lg"/>-->
+<!--                {{ form.as_p }}-->
+<!--&lt;!&ndash;                <p ><button type="submit">Регистрация</button></p>&ndash;&gt;-->
+
+<!--              </form>-->
+<!--              <form method="post">-->
+<!--                <div class="row">-->
+<!--                  <div class="col-md-6 mb-4">-->
+<!--                    <div class="form-outline">-->
+
+<!--                      <input type="text" id="firstName" class="form-control form-control-lg">-->
+<!--                      <label class="form-label" for="firstName" style="margin-left: 0px;">First Name</label>-->
+<!--                    <div class="form-notch"><div class="form-notch-leading" style="width: 9px;"></div><div class="form-notch-middle" style="width: 70.4px;"></div><div class="form-notch-trailing"></div></div></div>-->
+
+<!--                  </div>-->
+<!--                  <div class="col-md-6 mb-4">-->
+
+<!--                  </div>-->
+<!--                </div>-->
+
+<!--                <div class="row">-->
+<!--                  <div class="col-md-6 mb-4 d-flex align-items-center">-->
+
+
+<!--                  </div>-->
+<!--                  <div class="col-md-6 mb-4">-->
+
+
+<!--                  </div>-->
+<!--                </div>-->
+
+<!--                <div class="row">-->
+<!--                  <div class="col-md-6 mb-4 pb-2">-->
+
+<!--                    <div class="form-outline">-->
+<!--                      <input type="email" id="emailAddress" class="form-control form-control-lg">-->
+<!--                      <label class="form-label" for="emailAddress" style="margin-left: 0px;">Email</label>-->
+<!--                    <div class="form-notch"><div class="form-notch-leading" style="width: 9px;"></div><div class="form-notch-middle" style="width: 40px;"></div><div class="form-notch-trailing"></div></div></div>-->
+
+<!--                  </div>-->
+<!--                  <div class="col-md-6 mb-4 pb-2">-->
+
+
+<!--                  </div>-->
+<!--                </div>-->
+
+<!--                <div class="row">-->
+<!--                  <div class="col-12">-->
+
+
+<!--                  </div>-->
+<!--                </div>-->
+
+
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    </div>
+
+
+  </div>
+</section>
+
+{% endblock %}

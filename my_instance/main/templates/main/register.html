@@ -1,0 +1,49 @@
+{% extends 'main/base.html' %}
+
+{% block title %}
+Авторизация
+{% endblock %}
+
+{% block content %}
+<section class="w-100 px-4 py-5 gradient-custom" style="border-radius: .5rem .5rem 0 0;">
+  <style>
+    .gradient-custom {
+      /* fallback for old browsers */
+      background: #f093fb;
+
+      /* Chrome 10-25, Safari 5.1-6 */
+      background: -webkit-linear-gradient(to bottom right, rgba(100, 100, 100, 1), rgba(100, 100, 100, 1));
+
+      /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+      background: linear-gradient(to bottom right, rgba(100, 50, 200, 1), rgba(80, 87, 108, 1))
+    }
+
+    .card-registration .select-input.form-control[readonly]:not([disabled]) {
+      font-size: 1rem;
+      line-height: 2.15;
+      padding-left: .75em;
+      padding-right: .75em;
+    }
+
+    .card-registration .select-arrow {
+      top: 13px;
+    }
+  </style>
+    <div class="row justify-content-center">
+        <div class="col-12 col-lg-9 col-xl-9">
+          <div class="card shadow-2-strong card-registration" style="border-radius: 15px;">
+            <div class="card-body p-4 p-md-5">
+              <h3 class="mb-4 pb-2 pb-md-0 mb-md-5">Регистрация</h3>
+                <form method="post">
+                    {% csrf_token %}
+                    <input type="hidden" name="next" value="{{ next }}" class="form-control form-control-lg"/>
+                    {{ form.as_p }}
+                    <p ><button class="btn btn-primary btn-lg" type="submit">Регистрация</button></p>
+                </form>
+            </div>
+          </div>
+        </div>
+      </div>
+
+</section>
+{% endblock %}

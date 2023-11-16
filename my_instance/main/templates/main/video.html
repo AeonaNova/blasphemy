@@ -1,0 +1,13 @@
+{% extends 'main/base.html' %}
+
+{% block content %}
+<h1>Видеоматериалы</h1>
+<!--    <video controls>-->
+<!--        <source src="{{ video_url }}" type="video/mp4">-->
+<!--        Ваш браузер не поддерживает воспроизведение видео.-->
+<!--        <iframe width="560" height="315" src="https://www.youtube.com/embed/60XZkQJxsp8" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>-->
+<!--    </video>-->
+{% for video in vid %}
+    <iframe width="560" height="315" src={{video}} frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+{%endfor%}
+{% endblock %}

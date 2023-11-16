@@ -1,0 +1,31 @@
+{% extends 'main/base.html' %}
+
+{% block title %}
+{{ title }}
+{% endblock %}
+
+{% block content %}
+
+    <h1>Главная страница</h1>
+    <h3>Список статей</h3>
+    {% if photo %}
+        <p><img class="img-article-left thumb" src="{{el.photo.url}}"></p>
+    {% endif %}
+    {% if posts %}
+        {% for post in page_obj %}
+            <p class="first ">Категория: {{post.cat}}</p>
+            <div class="alert alert-light mt-4 bg-dark ">
+                <p><img class="img-article-left thumb" src="{{post.photo.url}}" width="370" align="middle"></p>
+                <h3>{{ post.title }}</h3>
+                <p>{{ post.posts|linebreaks|truncatewords:45 }}</p>
+                <p class="w-100 btn btn-lg btn-outline-light "><a href="{{ post.get_absolute_url }}">Прочитать</a></p>
+            </div>
+        {% endfor %}
+    {% else %}
+        <p>Нет записей</p>
+    {% endif %}
+
+{% endblock %}
+
+
+

@@ -1,0 +1,20 @@
+{% extends 'main/base.html' %}
+
+{% block title %}
+Загрузить изображение
+{% endblock %}
+
+{% block content %}
+<!--{% for image in images %}-->
+<!--    <img src="{{ image.image.url }}" alt="Image">-->
+<!--{% endfor %}-->
+<h2>Добавить изображение</h2>
+{% if perms.catalog.can_upload_image %}
+    <form method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        {{ form.image }}<br>
+        <br><button type="submit" class = "btn btn-primary">Добавить</button>
+        <span>{{error}}</span>
+    </form>
+{% endif %}
+{% endblock %}
